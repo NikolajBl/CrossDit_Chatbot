@@ -14,4 +14,6 @@ rules:
   steps:
   - action: manure_quantity_form
   - active_loop: null
+  - action: action_compute_manure
   - action: utter_manure_form_summary
+  - action: utter_suggested_manure_quantity

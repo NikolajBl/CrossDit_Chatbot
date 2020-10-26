@@ -6,7 +6,7 @@ intents:
   - affirm
   - manure_quantity_question
   - inform
-
+ 
 responses:
   utter_greet:
   - text: "Hej! Hvad kan jeg hjælpe dig med?"
@@ -30,6 +30,9 @@ responses:
   Område: {location}  \n
   Mark areal: {field_size} hektar"
 
+  utter_suggested_manure_quantity:
+  - text: "Den anbefalede mængde gødning er {manure_quantity}"
+
 
 forms:
   manure_quantity_form:
@@ -40,8 +43,11 @@ forms:
       - type: from_entity
         entity: location
 
+
+
 actions: 
   - action_manure_quantity_form
+  - action_compute_manure
 
 entities:
     - field_size
@@ -52,7 +58,11 @@ slots:
       type: text
     location:
       type: text
- 
+    manure_quantity:
+      type: float
+      min_value: -100000.0
+      max_value: 100000.0
+
 
 session_config:
   session_expiration_time: 60
