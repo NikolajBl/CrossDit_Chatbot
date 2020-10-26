@@ -1,92 +1,53 @@
 version: "2.0"
 
 nlu:
+- intent: inform
+  examples: | 
+    - [8](field_size) hektar
+    - [10](field_size)
+    - [Nord Sjælland](location)
+    - [Jylland](location)
+    - [88](field_size) h
+    - [77](field_size)
+    - [Sjælland](location)
+    - [Jylland](location)
+    - [Fyn](location)
+    - [Syd Sjælland](location)
+
+
 - intent: greet
   examples: |
-    - hey
-    - hello
+    - hej
+    - goddag
+    - hvad så?
+    - pænt goddag
+    - hey!
     - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-
-- intent: goodbye
-  examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
 
 - intent: affirm
   examples: |
+    - ja
     - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - check
+    - okay
+    - helt fint
+    - jeg er klar
+    - det er ok
 
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
 
-- intent: mood_unhappy
+- intent: goodbye
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - forvel
+    - vi ses
+    - tak for denne gang
+    - indtil næste gang!
+    - tak for i dag
+    - jeg smutter nu
+    - på gensyn
 
-- intent: bot_challenge
+- intent: manure_quantity_question
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - Kan du hjælpe mig med at beregne hvor meget gødning jeg skal bruge til mine marker?
+    - Har brug for hjælp til at beregne gødningsmængde for mine marker.
+    - Hvor meget gødning er anbefalet at jeg bruger om året?

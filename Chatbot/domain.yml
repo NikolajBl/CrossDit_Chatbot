@@ -4,30 +4,55 @@ intents:
   - greet
   - goodbye
   - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - manure_quantity_question
+  - inform
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hej! Hvad kan jeg hjælpe dig med?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_manure_form_introduction:
+  - text: "Det kan jeg sagtens hjælpe dig med.  \n
+           For at beregne en anbefalet gødningsmængde har jeg brug for at stille dig et par spørgsmål.  \n
+           Er du klar?"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_ask_location:
+  - text: "I hvilken region bor du?"
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_ask_field_size:
+  - text: "Hvor mange hektar land skal der bruges gødning til?"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Fortsat god dag!"
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_manure_form_summary:
+  - text: "Du har givet os følgende oplysninger:  \n
+  Område: {location}  \n
+  Mark areal: {field_size} hektar"
+
+
+forms:
+  manure_quantity_form:
+    field_size:
+      - type: from_entity
+        entity: field_size
+    location:
+      - type: from_entity
+        entity: location
+
+actions: 
+  - action_manure_quantity_form
+
+entities:
+    - field_size
+    - location
+  
+slots:
+    field_size:
+      type: text
+    location:
+      type: text
+ 
 
 session_config:
   session_expiration_time: 60

@@ -2,29 +2,15 @@ version: "2.0"
 
 stories:
 
-- story: happy path
+- story: greet
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
+- story: manure_form
+  steps: 
+  - intent: manure_quantity_question
+  - action: utter_manure_form_introduction
   - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - action: manure_quantity_form
+  - active_loop: manure_quantity_form

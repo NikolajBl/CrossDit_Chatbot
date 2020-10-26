@@ -7,7 +7,11 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+
+- rule: manure_form_submit
+  condition:
+  - active_loop: manure_quantity_form
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - action: manure_quantity_form
+  - active_loop: null
+  - action: utter_manure_form_summary
