@@ -25,4 +25,4 @@ class ActionComputeManure(Action):
       location = tracker.get_slot('location')
 
 
-      return [SlotSet("manure_quantity", int(area)*10)]
+      return [SlotSet("manure_quantity", int(area)*10),SlotSet("location", None),SlotSet("field_size", None)]

@@ -14,3 +14,5 @@ stories:
   - intent: affirm
   - action: manure_quantity_form
   - active_loop: manure_quantity_form
+
+

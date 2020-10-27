@@ -4,6 +4,7 @@ intents:
   - greet
   - goodbye
   - affirm
+  - deny
   - manure_quantity_question
   - inform
  
@@ -11,27 +12,29 @@ responses:
   utter_greet:
   - text: "Hej! Hvad kan jeg hjælpe dig med?"
 
+  utter_other_questions:
+  - text: "Hvad kan jeg ellers hjælpe dig med?"
+
   utter_manure_form_introduction:
-  - text: "Det kan jeg sagtens hjælpe dig med.  \n
-           For at beregne en anbefalet gødningsmængde har jeg brug for at stille dig et par spørgsmål.  \n
+  - text: "For at beregne en anbefalet gødningsmængde har jeg brug for at stille dig et par spørgsmål.  \n
            Er du klar?"
 
   utter_ask_location:
   - text: "I hvilken region bor du?"
 
   utter_ask_field_size:
-  - text: "Hvor mange hektar land skal der bruges gødning til?"
+  - text: "Hvor stor er din mark? (i hektar)"
 
   utter_goodbye:
   - text: "Fortsat god dag!"
 
   utter_manure_form_summary:
-  - text: "Du har givet os følgende oplysninger:  \n
-  Område: {location}  \n
-  Mark areal: {field_size} hektar"
+  - text: "Du har givet mig følgende oplysninger:  \n
+  Region: **{location}**  \n
+  Mark areal: **{field_size}** hektar"
 
   utter_suggested_manure_quantity:
-  - text: "Den anbefalede mængde gødning er {manure_quantity}"
+  - text: "Beregnet gyllemængde per år er **{manure_quantity}** tons"
 
 
 forms:

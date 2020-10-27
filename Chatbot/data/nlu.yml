@@ -34,6 +34,16 @@ nlu:
     - jeg er klar
     - det er ok
 
+- intent: deny
+  examples: |
+    - nej
+    - niks
+    - nope
+    - no
+    - n
+    - nah
+    - helst ikke
+    - absolut ikke
 
 
 - intent: goodbye

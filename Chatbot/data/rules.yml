@@ -14,6 +14,13 @@ rules:
   steps:
   - action: manure_quantity_form
   - active_loop: null
-  - action: action_compute_manure
   - action: utter_manure_form_summary
+  - action: action_compute_manure
   - action: utter_suggested_manure_quantity
+  - action: utter_other_questions
+
+- rule: manure_form_deny
+  steps: 
+  - action: utter_manure_form_introduction
+  - intent: deny
+  - action: utter_other_questions
