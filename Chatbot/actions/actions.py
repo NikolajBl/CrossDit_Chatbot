@@ -23,6 +23,8 @@ class ActionComputeManure(Action):
 
       area = tracker.get_slot('field_size')
       location = tracker.get_slot('location')
+      crop = tracker.get_slot('crop_type')
 
-
-      return [SlotSet("manure_quantity", int(area)*10),SlotSet("location", None),SlotSet("field_size", None)]
+      return [SlotSet("manure_quantity", int(area)*10),
+               SlotSet("location", None),SlotSet("field_size", None),
+               SlotSet("crop_type", None)]

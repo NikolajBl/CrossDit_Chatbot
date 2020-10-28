@@ -5,14 +5,15 @@ nlu:
   examples: | 
     - [8](field_size) hektar
     - [10](field_size)
-    - [Nord Sjælland](location)
-    - [Jylland](location)
+    - [Sjælland](location)
+    - [Midtjylland](location)
     - [88](field_size) h
     - [77](field_size)
-    - [Sjælland](location)
-    - [Jylland](location)
-    - [Fyn](location)
-    - [Syd Sjælland](location)
+    - [Hovedstaden](location)
+    - [Nordjylland](location)
+    - [Vårbyg](crop_type)
+    - [Hvede](crop_type)
+    - [Korn](crop_type)
 
 
 - intent: greet
@@ -61,3 +62,4 @@ nlu:
     - Kan du hjælpe mig med at beregne hvor meget gødning jeg skal bruge til mine marker?
     - Har brug for hjælp til at beregne gødningsmængde for mine marker.
     - Hvor meget gødning er anbefalet at jeg bruger om året?
+    - Hvor meget dyr lort skal jeg bruge til mine marker?

@@ -19,9 +19,6 @@ responses:
   - text: "For at beregne en anbefalet gødningsmængde har jeg brug for at stille dig et par spørgsmål.  \n
            Er du klar?"
 
-  utter_ask_location:
-  - text: "I hvilken region bor du?"
-
   utter_ask_field_size:
   - text: "Hvor stor er din mark? (i hektar)"
 
@@ -30,15 +27,36 @@ responses:
 
   utter_manure_form_summary:
   - text: "Du har givet mig følgende oplysninger:  \n
+  Afgrøder: **{crop_type}**  \n
   Region: **{location}**  \n
-  Mark areal: **{field_size}** hektar"
+  Mark areal: **{field_size} hektar**"
 
   utter_suggested_manure_quantity:
   - text: "Beregnet gyllemængde per år er **{manure_quantity}** tons"
 
+  utter_ask_location:
+    - text: "I hvilken region bor du?"
+      buttons:
+      - title: "Sjælland"
+        payload: 'Sjælland'
+      - title: "Nordjylland"
+        payload: 'Nordjylland'
+  
+  utter_ask_crop_type:
+    - text: "Hvilken type afgrøder har du?"
+      buttons:
+      - title: "Hvede"
+        payload: 'Hvede'
+      - title: "Korn"
+        payload: 'Korn'
+      - title: "Vårbyg"
+        payload: 'Vårbyg'
 
 forms:
   manure_quantity_form:
+    crop_type:
+      - type: from_entity
+        entity: crop_type
     field_size:
       - type: from_entity
         entity: field_size
@@ -55,8 +73,11 @@ actions:
 entities:
     - field_size
     - location
+    - crop_type
   
 slots:
+    crop_type:
+      type: text
     field_size:
       type: text
     location:
@@ -65,6 +86,7 @@ slots:
       type: float
       min_value: -100000.0
       max_value: 100000.0
+      
 
 
 session_config:

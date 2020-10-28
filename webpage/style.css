@@ -1,0 +1,13 @@
+.rw-conversation-container .rw-messages-container .rw-message .rw-response{
+}
+
+.rw-conversation-container .rw-messages-container .rw-message .rw-client{
+}
+.rw-conversation-container .replies {
+    /*display:block*/
+}
+
+.rw-conversation-container  .rw-messages-container .rw-avatar {
+    height : 30px;
+    width: 30px
+}

@@ -1,12 +1,12 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <title>Webchat</title>
 </head>
 
 <body>
-    <h1 style="text-align:center"> Naive optimistic Bot</h1>
+    <h1 style="text-align:center; font-style: sans-serif"> Landmand Chatbot </h1>
     <div class="ChatBot" id="webchat" style="object-position:center; width:50%; height:80%; margin:auto; padding-top: 5%;"></div>
     <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
     <script>
@@ -17,8 +17,11 @@
             socketPath: "/socket.io/",
             embedded: true,
             title: "Velkommen",
+            hideWhenNotConnected: false,
             fullScreenMode: false,
-            subtitle: "til Landmændenes ekspert",
+            profileAvatar: "./chatbot_profile.png",
+            inputTextFieldHint: "Skriv en besked",
+            subtitle: "til Landmændenes Chatbot",
             params: { "storage": "session", images: {
                     dims: {
                         width: 300,
