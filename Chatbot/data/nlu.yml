@@ -14,6 +14,16 @@ nlu:
     - [Vårbyg](crop_type)
     - [Hvede](crop_type)
     - [Korn](crop_type)
+    - [A](stable_type)
+    - [B](stable_type)
+    - [C](stable_type)
+    - [Kvæg](animal_type)
+    - [Gris](animal_type)
+    - [Høns](animal_type)
+    - [10.0](animal_number)
+    - [12.0](animal_number)
+    - [194.12](animal_number)
+
 
 
 - intent: greet
@@ -63,3 +73,20 @@ nlu:
     - Har brug for hjælp til at beregne gødningsmængde for mine marker.
     - Hvor meget gødning er anbefalet at jeg bruger om året?
     - Hvor meget dyr lort skal jeg bruge til mine marker?
+    - Hvad er den anbefalede gyllemængde for min mark?
+
+- intent: manure_production_question
+  examples: |
+    - Hvordan beregner jeg produceret gødningsmængde?
+    - Hvad er gennemsnittet af produceret gylle for mine dyr?
+    - Jeg har brug for hjælp til at beregne gennemsnitlig produceret gyllemængde.
+    - Hvor meget gylle producerer mine dyr i gennemsnit?
+    - Kan jeg få hjælp til at beregne gennemsnitlig produceret gylle givet årstal?
+
+- intent: animal_average_number_help_request
+  examples: |
+    - årsdyr
+    - årstal
+    - årstal?
+    - hvordan beregner jeg årstal?
+    - hvordan beregner jeg årsdyr?

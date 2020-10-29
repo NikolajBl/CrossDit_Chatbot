@@ -7,6 +7,12 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
+- rule: manure_form
+  steps: 
+  - action: utter_manure_form_introduction
+  - intent: affirm
+  - action: manure_quantity_form
+  - active_loop: manure_quantity_form
 
 - rule: manure_form_submit
   condition:
@@ -22,5 +28,38 @@ rules:
 - rule: manure_form_deny
   steps: 
   - action: utter_manure_form_introduction
+  - intent: deny
+  - action: utter_other_questions
+
+- rule: manure_production_form
+  steps: 
+  - action: utter_manure_production_form_introduction
+  - intent: affirm
+  - action: manure_production_form
+  - active_loop: manure_production_form
+
+- rule: manure_production_form_submit
+  condition:
+  - active_loop: manure_production_form
+  steps:
+  - action: manure_production_form
+  - active_loop: null
+  - action: utter_manure_production_form_summary
+  - action: action_compute_manure_production
+  - action: utter_manure_production_average
+  - action: utter_other_questions
+
+- rule: manure_production_form_year_number_question
+  condition:
+  - active_loop: manure_production_form
+  steps:
+  - intent: animal_average_number_help_request
+  - action: utter_animal_average_number_help
+  - action: manure_production_form
+  - active_loop: manure_production_form
+
+- rule: manure_production_form_deny
+  steps: 
+  - action: utter_manure_production_form_introduction
   - intent: deny
   - action: utter_other_questions

@@ -7,10 +7,12 @@ stories:
   - intent: greet
   - action: utter_greet
 
-- story: manure_form
+- story: manure_form_intro
   steps: 
   - intent: manure_quantity_question
   - action: utter_manure_form_introduction
-  - intent: affirm
-  - action: manure_quantity_form
-  - active_loop: manure_quantity_form
+
+- story: manure_production_form_intro
+  steps: 
+  - intent: manure_production_question
+  - action: utter_manure_production_form_introduction

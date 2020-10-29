@@ -6,21 +6,63 @@ intents:
   - affirm
   - deny
   - manure_quantity_question
+  - manure_production_question
   - inform
- 
+  - animal_average_number_help_request
+
 responses:
   utter_greet:
-  - text: "Hej! Hvad kan jeg hjælpe dig med?"
+  - text: "Hej! Jeg hedder John og er ekspert indenfor landbrug.  \n
+           Hvad kan jeg hjælpe dig med?"
+  
+  utter_confirmation:
+  - text: "Det er modtaget."
+
+  utter_animal_average_number_help:
+  - text: "Side 18 afsnit 2.1.1 forklarer hvordan årstallet bliver beregnet.  \n
+           [Vejlednings Dokument](https://lbst.dk/fileadmin/user_upload/NaturErhverv/Filer/Landbrug/Goedningsregnskab/Vejledning_om_goedsknings-_og_harmoniregler_2020_2021.pdf)"
 
   utter_other_questions:
   - text: "Hvad kan jeg ellers hjælpe dig med?"
 
   utter_manure_form_introduction:
-  - text: "For at beregne en anbefalet gødningsmængde har jeg brug for at stille dig et par spørgsmål.  \n
+  - text: "For at beregne en anbefalet gødningsmængde til marker har jeg brug for at stille dig et par spørgsmål.  \n
+           Er du klar?"
+
+  utter_manure_production_form_introduction:
+  - text: "For at beregne den gennemsnitlige gyllemængde per år af dine dyr  \n
+           har jeg brug for at stille dig et par spørgsmål.  \n
            Er du klar?"
 
   utter_ask_field_size:
-  - text: "Hvor stor er din mark? (i hektar)"
+  - text: "Check.  \n
+           Hvor stor er det samlede areal af dine marker med den specifikke afgrøde? (i hektar)"
+  
+  utter_ask_stable_type:
+  - text: "Modtaget.  \n
+           Hvilken staldtype har du?"
+    buttons:
+    - title: "A"
+      payload: 'A'
+    - title: "B"
+      payload: 'B'
+    - title: "C"
+      payload: 'C'
+  
+  utter_ask_animal_type:
+  - text: "Hvilken type dyr har du?"
+    buttons:
+    - title: "Kvæg"
+      payload: 'Kvæg'
+    - title: "Gris"
+      payload: 'Gris'
+    - title: "Høns"
+      payload: 'Høns'
+
+  utter_ask_animal_number:
+  - text: "Hvad er årstallet for dine dyr?  \n 
+           Hvis du er i tvivl om hvordan man beregner årstallet så skriv **årstal?**."
+  
 
   utter_goodbye:
   - text: "Fortsat god dag!"
@@ -29,13 +71,24 @@ responses:
   - text: "Du har givet mig følgende oplysninger:  \n
   Afgrøder: **{crop_type}**  \n
   Region: **{location}**  \n
-  Mark areal: **{field_size} hektar**"
+  Mark areal: **{field_size} hektar**  \n"
+
+  utter_manure_production_form_summary:
+  - text: "Du har givet mig følgende oplysninger:  \n
+  Type dyr: **{animal_type}**  \n
+  Årstal: **{animal_number}**  \n 
+  Type stald: **{stable_type}** "
 
   utter_suggested_manure_quantity:
   - text: "Beregnet gyllemængde per år er **{manure_quantity}** tons"
 
+  utter_manure_production_average:
+    - text: "Den gennemsnitlige gyllemængde per år er beregnet til at være {manure_production_estimate} tons"
+
+
   utter_ask_location:
-    - text: "I hvilken region bor du?"
+    - text: "Ok det er modtaget.  \n
+             I hvilken region bor du?"
       buttons:
       - title: "Sjælland"
         payload: 'Sjælland'
@@ -64,16 +117,29 @@ forms:
       - type: from_entity
         entity: location
 
+  manure_production_form:
+    animal_type:
+      - type: from_entity
+        entity: animal_type
+    animal_number:
+      - type: from_entity
+        entity: animal_number
+    stable_type:
+      - type: from_entity
+        entity: stable_type
 
 
 actions: 
-  - action_manure_quantity_form
   - action_compute_manure
+  - action_compute_manure_production
 
 entities:
     - field_size
     - location
     - crop_type
+    - stable_type
+    - animal_number
+    - animal_type
   
 slots:
     crop_type:
@@ -82,10 +148,20 @@ slots:
       type: text
     location:
       type: text
+    stable_type:
+      type: text
     manure_quantity:
       type: float
       min_value: -100000.0
       max_value: 100000.0
+    manure_production_estimate:
+      type: float
+      min_value: -100000.0
+      max_value: 100000.0
+    animal_number:
+      type: text
+    animal_type:
+      type: text
       
 
 
