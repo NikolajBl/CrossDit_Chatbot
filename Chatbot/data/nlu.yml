@@ -73,12 +73,12 @@ nlu:
     - Kan du hjælpe mig med at beregne hvor meget gødning jeg skal bruge til mine marker?
     - Har brug for hjælp til at beregne gødningsmængde for mine marker.
     - Hvor meget gødning er anbefalet at jeg bruger om året?
-    - Hvor meget dyr lort skal jeg bruge til mine marker?
+    - Hvor meget lort skal jeg bruge til mine marker?
     - Hvad er den anbefalede gyllemængde for min mark?
 
 - intent: manure_production_question
   examples: |
-    - Hvordan beregner jeg produceret gødningsmængde?
+    - Hvordan beregner jeg produceret gødningsmængde af mine dyr?
     - Hvad er gennemsnittet af produceret gylle for mine dyr?
     - Jeg har brug for hjælp til at beregne gennemsnitlig produceret gyllemængde.
     - Hvor meget gylle producerer mine dyr i gennemsnit?
