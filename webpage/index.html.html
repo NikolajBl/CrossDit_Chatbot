@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Webchat</title>
+</head>
+
+<body>
+    <h1 style="text-align:center; font-style: sans-serif"> Landmand Chatbot </h1>
+    <div class="ChatBot" id="webchat" style="object-position:center; width:50%; height:80%; margin:auto; padding-top: 5%;"></div>
+    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
+    <script>
+        WebChat.default.init({
+            selector: "#webchat",
+            socketUrl: "http://localhost:5005",
+            initPayload: "Hi",
+            socketPath: "/socket.io/",
+            embedded: true,
+            docViewer: true,
+            title: "Velkommen",
+            hideWhenNotConnected: false,
+            fullScreenMode: false,
+            profileAvatar: "./chatbot_profile.png",
+            inputTextFieldHint: "Skriv en besked",
+            subtitle: "til Landmændenes Chatbot",
+            params: { "storage": "session", images: {
+                    dims: {
+                        width: 300,
+                        height: 200,
+                    }
+                } } 
+        })
+    </script>
+</body>
+
+</html>

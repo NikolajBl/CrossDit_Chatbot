@@ -56,7 +56,6 @@ rules:
   - intent: animal_average_number_help_request
   - action: utter_animal_average_number_help
   - action: manure_production_form
-  - active_loop: manure_production_form
 
 - rule: manure_production_form_deny
   steps: 
