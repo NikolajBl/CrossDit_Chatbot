@@ -12,7 +12,7 @@
     <script>
         WebChat.default.init({
             selector: "#webchat",
-            socketUrl: "http://dbadbf0ecd89.ngrok.io",
+            socketUrl: "https://dbadbf0ecd89.ngrok.io",
             initPayload: "Hi",
             socketPath: "/socket.io/",
             embedded: true,
@@ -20,6 +20,7 @@
             title: "Velkommen",
             hideWhenNotConnected: false,
             fullScreenMode: false,
+            profileAvatar: "./chatbot_profile.png",
             inputTextFieldHint: "Skriv en besked",
             subtitle: "til Landmændenes Chatbot",
             params: { "storage": "session", images: {
