@@ -1,8 +1,10 @@
-FROM rasa/rasa-sdk:1.10.2 
-USER root 
+FROM rasa/rasa-sdk
 
-RUN pip3 install recognizers-text-suite 
-RUN pip3 install requests 
-RUN pip3 install datetime 
+WORKDIR /app 
+USER root
+RUN python -m pip install --upgrade pip
+# RUN pip install recognizers-text-suite
+COPY .  /app/actions
+VOLUME /app 
 
-USER 1001
+ENTRYPOINT ["rasa", "run", "actions"]
