@@ -5,14 +5,13 @@
     <title>Webchat</title>
 </head>
 
-<body>
-    <h1 style="text-align:center; font-style: sans-serif"> Landmand Chatbot </h1>
-    <div class="ChatBot" id="webchat" style="object-position:center; width:50%; height:80%; margin:auto; padding-top: 5%;"></div>
+<body style="background-image: url('lbst.png')">
+    <div class="ChatBot" id="webchat" style="object-position:center; width:40%; height:60%; margin:auto; position:fixed; bottom: -10; right: 0"></div>
     <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
     <script>
         WebChat.default.init({
             selector: "#webchat",
-            socketUrl: " http://1fab978fc921.ngrok.io",
+            socketUrl: "https://1fab978fc921.ngrok.io",
             initPayload: "Hi",
             socketPath: "/socket.io/",
             embedded: true,
