@@ -6,6 +6,7 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+  - action: utter_introduction
 
 - story: manure_form_intro
   steps: 

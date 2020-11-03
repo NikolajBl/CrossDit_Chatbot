@@ -12,8 +12,17 @@ intents:
 
 responses:
   utter_greet:
-  - text: "Hej! Jeg hedder John og er ekspert indenfor landbrug.  \n
-           Hvad kan jeg hjælpe dig med?"
+  - text: "Hej! Jeg hedder John og er ekspert indenfor landbrug.  \n"
+
+  utter_introduction:
+  - text: "Her er nogen af de ting jeg kan hjælpe dig med:  \n
+           *  Rådgivning til optimal gødningsmængde for dine marker  \n
+           *  Beregning af gennemsnitlig produceret gyllemængde per år for dine dyr  \n
+           *  Generel information om afgrøder  \n 
+           
+           Hvis du har brug for hjælp, så stil mig et spørgsmål og jeg vil prøve at svare bedst muligt. 
+           "
+
   
   utter_confirmation:
   - text: "Det er modtaget."
