@@ -1,10 +1,17 @@
-.rw-conversation-container .rw-messages-container .rw-message .rw-response{
+.rw-conversation-container .rw-from-client .rw-client {
+    background-color: #007885;
 }
 
-.rw-conversation-container .rw-messages-container .rw-message .rw-client{
+.rw-conversation-container .rw-header-and-loading .rw-header {
+    background-color: #007885;
 }
-.rw-conversation-container .replies {
-    /*display:block*/
+
+.rw-widget-container .rw-launcher {
+    background-color: #007885;
+}
+
+.rw-conversation-container .rw-launcher {
+    background-color: #007885;
 }
 
 .rw-conversation-container  .rw-messages-container .rw-avatar {
