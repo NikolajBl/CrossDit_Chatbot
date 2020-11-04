@@ -17,3 +17,9 @@ stories:
   steps: 
   - intent: manure_production_question
   - action: utter_manure_production_form_introduction
+
+- story: crops
+  steps:
+  - intent: crop_question
+  - action: utter_crop_answer
+  - action: utter_other_questions

@@ -91,3 +91,10 @@ nlu:
     - årstal?
     - hvordan beregner jeg årstal?
     - hvordan beregner jeg årsdyr?
+
+- intent: crop_question
+  examples: |
+    - Jeg vil gerne vide mere om afgrøder
+    - Info om afgrøder
+    - Information om afgrøder 
+    - Hvor kan jeg få mere at vide om afgrøder?

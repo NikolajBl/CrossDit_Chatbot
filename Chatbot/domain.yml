@@ -9,6 +9,7 @@ intents:
   - manure_production_question
   - inform
   - animal_average_number_help_request
+  - crop_question
 
 responses:
   utter_greet:
@@ -19,13 +20,18 @@ responses:
            *  Rådgivning til optimal gødningsmængde for dine marker  \n
            *  Beregning af gennemsnitlig produceret gyllemængde per år for dine dyr  \n
            *  Generel information om afgrøder  \n 
-           
+
            Hvis du har brug for hjælp, så stil mig et spørgsmål og jeg vil prøve at svare bedst muligt. 
            "
 
   
   utter_confirmation:
   - text: "Det er modtaget."
+
+  utter_crop_answer:
+  - text: "Hvis du vil vide mere om afgrøder, så kan jeg anbefale at du besøger yara.dk.  \n
+  [Link til yara's afgrøde guide](https://www.yara.dk/godning/afgrodeoversigt/)         
+  "
 
   utter_animal_average_number_help:
   - text: "Side 18 afsnit 2.1.1 forklarer hvordan årstallet bliver beregnet.  \n
@@ -69,8 +75,11 @@ responses:
       payload: 'Høns'
 
   utter_ask_animal_number:
-  - text: "Hvad er årstallet for dine dyr?  \n 
-           Hvis du er i tvivl om hvordan man beregner årstallet så skriv **årstal?**."
+  - text: "Hvad mange årsdyr har du?  \n 
+           Hvis du er i tvivl om hvordan man beregner gennemsnitlig antal årsdyr så tryk på hjælp knappen."
+    buttons:
+    - title: "Hjælp"
+      payload: 'årstal?'
   
 
   utter_goodbye:
@@ -113,6 +122,7 @@ responses:
         payload: 'Korn'
       - title: "Vårbyg"
         payload: 'Vårbyg'
+  
 
 forms:
   manure_quantity_form:
