@@ -11,7 +11,7 @@
     <script>
         WebChat.default.init({
             selector: "#webchat",
-            socketUrl: "https://7b242582a641.ngrok.io",
+            socketUrl: "http://localhost:5005",
             initPayload: "Hi",
             socketPath: "/socket.io/",
             embedded: false,
@@ -24,8 +24,8 @@
             subtitle: "til Landmændenes Chatbot",
             params: { "storage": "session", images: {
                     dims: {
-                        width: 300,
-                        height: 200,
+                        width: 400,
+                        height: 300,
                     }
                 } } 
         })
